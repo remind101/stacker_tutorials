@@ -1,0 +1,6 @@
+stacks:
+  - name: myBucketStack
+    class_path: stacker_blueprints.s3.Buckets
+    variables:
+      Buckets:
+        sampleBucket: {}
