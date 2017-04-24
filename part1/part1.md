@@ -54,7 +54,7 @@ Let's dissect this file:
 
 The `stacks` block is where the configuration for each stack is stored, `stacks` is a list with each list item being a seperate stack.
 
-Every stack (collection of aws resources) has 3 mandatory parameters. The `name` is used along with the `namespace` to create a unique identifier for each stack. The `class_path` is the location of the template that will be used to create resources, we have created a stacker_blueprints repo which contains templates for many commonly created resources but you can easily create your own. The `variables` is used indicate configuration options for the template, you can see variables a stack accepts by looking at the template that the stack is using. For now, we won't have any custom configuration for our bucket and just leave it empty.
+Every stack (collection of aws resources) has 3 mandatory parameters. The `name` is used along with the `namespace` to create a unique identifier for each stack. The `class_path` is the location of the blueprint (a blueprint is a python class which defines which AWS resources will be created for a stack, we will talk about this in more detail later). We have created a stacker_blueprints repo which contains templates for many commonly created resources but you can easily create your own. The `variables` is used indicate configuration options for the template, you can see variables a stack accepts by looking at the template that the stack is using. For now, we won't have any custom configuration for our bucket and just leave it empty.
 
 ### The Environment File
 
@@ -80,7 +80,7 @@ if everything was set up correctly you should now see output similar to this
 ```
 [2017-04-13T17:26:42] Using Default AWS Provider
 [2017-04-13T17:26:42] Plan Status:
-[2017-04-13T17:26:42] 	prod-appname-myBucketStack: pending
+[2017-04-13T17:26:42] 	prod-buckets-myBucketStack: pending
 ```
 
 after the build has completed you should go into your AWS cloudformation console and verify that a stack was created which builds the correct bucket. 
