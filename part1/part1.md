@@ -92,7 +92,7 @@ If there is an error, stacker will print out what the error is, this could be an
 
 Congratulations, you have built your first of many stacks! 
 
->This brings us to our next part: [Configuring this S3 Bucket to be a Website](../part2)
+Check out the next part of the tutorial here:  [Part 2](../part2)
 
 
 
