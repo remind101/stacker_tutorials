@@ -1,0 +1,11 @@
+sys_path: .
+
+stacks:
+  - name: myBucketStack
+    class_path: local_blueprints.website.Website
+    variables:
+      Buckets:
+        sampleBucket:
+          WebsiteConfiguration:
+            ErrorDocument: error.html
+            IndexDocument: index.html
