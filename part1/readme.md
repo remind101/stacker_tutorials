@@ -54,11 +54,12 @@ Let's dissect this file:
 
 The `stacks` block is where the configuration for each stack is stored, `stacks` is a list with each list item being a seperate stack.
 
-Every stack (collection of aws resources) has 3 mandatory parameters. The `name` is used along with the `namespace` to create a unique identifier for each stack. The `class_path` is the location of the blueprint (a blueprint is a python class which defines which AWS resources will be created for a stack, we will talk about this in more detail later). We have created a stacker_blueprints repo which contains templates for many commonly created resources but you can easily create your own. The `variables` is used indicate configuration options for the template, you can see variables a stack accepts by looking at the template that the stack is using. For now, we won't have any custom configuration for our bucket and just leave it empty.
+Every stack (collection of aws resources) has 3 mandatory parameters. The `name` is used along with the `namespace` to create a unique identifier for each stack. The `class_path` is the location of the blueprint (a blueprint is a python class which defines which AWS resources will be created for a stack, we will talk about this in more detail later). We have created a stacker_blueprints repo which contains templates for many commonly created resources but you can easily create your own. The `variables` indicate configuration options for the template.  To determine the `variables` that a stack accepts, review the Python template.
+For now, we won't have any custom configuration for our bucket and just leave it empty.
 
 ### The Environment File
 
-Imagine you have a production environment and a staging environment, and environment file is the place you store every thing that is different about them. This includes API Keys, ARNs for different roles and environment specific variables. For this super simple example we will create the most basic environment file possible, the only mandatory variable for an environment file is the `namespace`. 
+Imagine you have a production environment and a staging environment, an environment file is the place you store every thing that is different about them. This includes API Keys, ARNs for different roles and environment specific `variables`. For this super simple example we will create the most basic environment file possible, the only mandatory variable for an environment file is the `namespace`. 
 
 
 Your first stacker config file: **prod.env**
